@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <p>Здравствуйте!
+    <p>Проверьте, пожалуйста, правильность заполнения документов.
+    <p>Файлы:
+    <ol>
+        {% for file in attaches %}
+        <li>
+            <a href="{{file.url}}">{{file.title}}</a>
+        </li>
+        {% endfor %}
+    </ol>
+
+    <p>О результатах проверки прошу сообщить на email: <a href="mailto:{{email}}">{{email}}</a>
+    <p>&nbsp;
+    <a href="{{server_url_schema}}://{{api_url}}/batch/yurist/commit/?batch_check_id={{batch_check_id}}&success=true" style="background-color: #adff2f">Ошибок нет</a>
+    <p>&nbsp;
+    <a href="{{server_url_schema}}://{{api_url}}/batch/yurist/commit/?batch_check_id={{batch_check_id}}&success=false" style="background-color: #ff7c66">Есть ошибки</a>
+    <p>Спасибо,<br />
+        команда ЮРБЮРО!<br/>
+
+</body>
+</html>

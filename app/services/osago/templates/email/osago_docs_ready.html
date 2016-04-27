@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h2>Здравствуйте!</h2>
+
+{% set selfcare_url = service_schema + '://' + service_domain + '/account/?utm_source=osago_docs_ready&utm_medium=email&utm_term=' + user_id %}
+<p>Вы успешно подготовили документы в страховую компанию по услуге «Возмещение по ОСАГО». Они доступны вам в <a href="{{selfcare_url|make_auth_url(user_id)}}">личном кабинете</a> и по ссылкам ниже:
+
+<ol>
+    {% for doc in docs %}
+    {% if doc.document_type in ('osago_mail_list', 'osago_pretension', 'osago_documents_claim', 'osago_trust_submission_docs', 'osago_trust_obtain_docs', 'osago_trust_submision_obtain_docs') %}
+    <li>
+        <a href="{{doc.url}}">{{doc.caption}}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ol>
+
+<p>&nbsp;
+{% set go_further_url = service_schema + '://' + service_domain + '/osago/?id=' + batch_id + '&utm_source=osago_docs_ready&utm_medium=email&utm_term=' + user_id + '#page=submission'%}
+<p>Подробную информацию о том, как подать документы в страховую, вы найдете в ЮРБЮРО по <a href="{{go_further_url|make_auth_url(user_id)}}">ссылке</a>.
+
+<p>Спасибо,<br />
+    команда ЮРБЮРО
+<p></p><a href="tel:+78005005440">8 800 500-54-40</a><br/>
+<a href="mailto:support@yurburo.ru">support@yurburo.ru</a><br/>
+<a href="{{service_schema}}://{{ service_domain }}/{{'?'|utm_args('osago_docs_ready', user_id)}}">yurburo.ru</a>
+
+</body>
+</html>
+
+
+

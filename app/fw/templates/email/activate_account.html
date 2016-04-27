@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h2>Здравствуйте!</h2>
+<p>Вы зарегистрировались в сервисе ЮРБЮРО. Для получения писем от нашего сервиса, в том числе, писем с подготовленными документами, вам необходимо подтвердить адрес вашей электронной почты.
+
+{% set confirm_link= schema + '://' + domain + '/confirm/?code=' + link_code %}
+<p>Для подтверждения, пожалуйста, перейдите по <a href="{{confirm_link|utm_args('activate_account', uid)|make_auth_url(uid)}}">данной ссылке</a>.
+    Если у вас возникнут вопросы, просто ответьте нам на это письмо или напишите на <a href="mailto:support@yurburo.ru">support@yurburo.ru</a>.
+
+<p>Возможно, вы не регистрировались в нашем сервисе, и кто-то другой указал ваш адрес электронной почты. Если это так, то просто проигнорируйте это письмо.
+
+
+<p>Спасибо,<br />
+    команда ЮРБЮРО
+<p><a href="tel:+78005005440">8 800 500-54-40</a><br/>
+<a href="mailto:support@yurburo.ru">support@yurburo.ru</a><br/>
+<a href="{{schema}}://{{ domain }}/{{'?'|utm_args('activate_account', uid)}}">yurburo.ru</a>
+
+
+</body>
+</html>

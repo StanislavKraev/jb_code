@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<h2>Здравствуйте!</h2>
+
+<p>Вы указали свой адрес электронной почты на сервисе <a href="{{schema}}://{{ domain }}/{{'?'|utm_args('new_account_user_notify', user_id)}}">ЮРБЮРО</a>.
+<p>Мы создали для вас <a href="{{selfcare_url}}">личный кабинет</a>, в котором будут все документы, которые вы подготовили или подготовите с
+    помощью нашего сервиса в будущем. Для входа в личный кабинет используйте следующие параметры:
+
+<p>&nbsp;
+<p>Адрес электронной почты: {{email}}
+<p>Пароль: {{password}}
+
+<p>&nbsp;
+<p>Если вам не нравится пароль, то вы можете задать другой по <a href="{{schema}}://{{ domain }}/password-change/?code={{link_code}}&user_id={{user_id|utm_args('new_account_user_notify', user_id)}}">данной ссылке</a> или поменять его в любое время в
+    <a href="{{selfcare_url}}">личном кабинете</a>.
+
+<p>&nbsp;
+
+<p>Спасибо,<br />
+    команда ЮРБЮРО
+<p><a href="tel:+78005005440">8 800 500-54-40</a><br/>
+<a href="mailto:support@yurburo.ru">support@yurburo.ru</a><br/>
+<a href="{{schema}}://{{ domain }}/{{'?'|utm_args('new_account_user_notify', user_id)}}">yurburo.ru</a>
+
+</body>
+</html>

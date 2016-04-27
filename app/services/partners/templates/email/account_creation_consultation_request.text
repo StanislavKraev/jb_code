@@ -1,0 +1,28 @@
+Здравствуйте!
+
+Пользователь ЮРБЮРО хочет получить консультацию по открытию расчетного счета в банке <<Открытие>>.
+
+Контактный телефон: {{contact_phone}}
+{% if email%}e-mail: {{email}}{% endif %}
+
+{% if send_private_data %}
+Данные организации:
+
+    {{short_name}}
+    ОГРН: {{ogrn}}
+    ИНН: {{inn}}
+    Адрес регистрации: {{address.as_string()}}
+
+    Руководитель организации: {{general_manager_caption}} {{general_manager.full_name}}
+    Дата рождения: {{general_manager.birthdate.rus_full_text()}}
+    Паспортные данные: {{general_manager.passport.passport_rf_full_text}}
+{% endif %}
+
+С уважением,
+    Вера Жукова
+
+команда ЮРБЮРО
+8 800 500-54-40
+support@yurburo.ru
+
+{{schema}}://{{ domain }}

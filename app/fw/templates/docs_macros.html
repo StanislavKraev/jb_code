@@ -1,0 +1,11 @@
+{% macro fio_decl(field, decl='nom') -%}{{field.full_name|declension_fio(decl)}}{%- endmacro %}
+
+{% macro fio_short_decl(field, decl='nom') -%}{{field.full_name|declension_fio(decl)|shorten_fio}}{%- endmacro %}
+
+{% macro gen_meet_nec_votes(votes) -%}
+{% if votes == 1 %}Решение по вопросу принимается  участниками Общества единогласно.
+{%elif votes == 2 %}Решение по вопросу принимается большинством не менее \frc{2}{3} голосов от общего числа голосов Участников Общества.
+{%else%}Решение по вопросу принимается большинством не менее \frc{3}{4} голосов от общего числа голосов Участников Общества.{%endif%}
+{%- endmacro %}
+
+{% macro humanize_month_number(field, decl) -%}{% if field % 12 == 0 %}{% set years = field / 12 %}{{years|num_to_text('m', decl)}} {{'год'|padezh_and_number(decl, years)}}{% else %}{{field|num_to_text('m', decl)}} {{'месяц'|padezh_and_number(decl, field)}}{% endif %}{%- endmacro %}

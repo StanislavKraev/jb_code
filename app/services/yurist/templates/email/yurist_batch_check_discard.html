@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <p>Здравствуйте!
+    <p>Я просил проверить документы на регистрацию ООО {{full_name}}, но после этого изменил их. Больше проверять не надо.
+    <p>&nbsp;
+    <p>&nbsp;
+    <p>email: {% if email %}<a href="mailto:{{email}}">{{email}}</a>{% else %} отсутствует{% endif %}
+    <p>телефон: {% if mobile %}{{mobile}}{% else %} отсутствует{% endif %}
+        {% if social_link %}<p>Ссылка на профиль в соц. сети:<a href="{{social_link}}">social_link</a>{% endif %}
+
+    <p>Спасибо,<br />
+        команда ЮРБЮРО!<br/>
+</body>
+</html>

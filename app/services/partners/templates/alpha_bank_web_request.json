@@ -1,0 +1,15 @@
+{% if bank_contact_phone_general_manager and general_manager.email.initialized %}{%set email=general_manager.email%}{%else%}{%set email=''%}{% endif %}
+{% set KEY=contact_phone.value+email+'MUeNstrCde'%}
+{
+    "fio": "{{general_manager.full_name}}",
+    "phone": "{{contact_phone}}",
+    "email": "{{email}}",
+    "current_region": 21,
+    "city_match": 0,
+    "city": {% if address.city %}"{{address.city}}"{% else %}"{{address.region}}"{%endif%},
+    "code": "yurburoru",
+    "submit": 1,
+    "submitted": true,
+    "PARTNER": "yurburoru",
+    "KEY": "{{KEY|md5}}"
+}

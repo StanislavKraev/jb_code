@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h2>Здравствуйте!</h2>
+<p>На сайте налоговой появилась информация об отказе в регистрации ИП {{short_name}}
+{% if doc_rec_by_email %}<p>По вашему желанию отказ будет отправлен вам по почте, но при желании вы можете сами посетить налоговую.
+    Чтобы узнать как это сделать пройдите по <a href="{{ifns_book_doc_receive_url}}">ссылке</a>. {% else %}
+<p>Вы можете узнать причину отказа в налоговой, как это сделать вы можете узнать на нашем сайте по <a href="{{ifns_book_doc_receive_url}}">ссылке</a>.{% endif %}
+<p>Когда вы узнаете причину отказа, сообщите её нам (по электронной почте <a href="mailto:support@yurburo.ru">support@yurburo.ru</a> или по телефону, указанному на сайте).
+<p>В случае отказа по нашей вине мы вернем вам все деньги!
+
+<p>С уважением,<br />
+    Вера
+<p><br/>
+<p>команда ЮРБЮРО
+<p><a href="tel:+78005005440">8 800 500-54-40</a><br/>
+<a href="mailto:support@yurburo.ru">support@yurburo.ru</a><br/>
+<a href="{{schema}}://{{ domain }}/{{'?'|utm_args('ifns_ip_reg_fail', user_id)}}">yurburo.ru</a>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h2>Здравствуйте!</h2>
+
+<p>Пользователь ЮРБЮРО хочет получить консультацию по открытию расчетного счета в банке {{bank_title}}.
+
+<p>Контактный телефон: <a href="tel:{{contact_phone}}">{{contact_phone}}</a> {% if bank_contact_phone_general_manager %}{{general_manager.full_name}}{% endif %}
+{% if bank_contact_phone_general_manager and general_manager.email.initialized%}<p>e-mail: <a href="mailto:{{general_manager.email}}">{{general_manager.email}}</a>{% endif %}
+
+<p>&nbsp;
+
+<h5>Данные организации:</h5>
+<ul>
+    <li>{{short_name}}
+    <li>ОГРН: {{ogrn}}
+{% if inn %}<li>ИНН: {{inn}} {% endif %}
+    <li>Адрес регистрации: {{address.as_string()}}
+{% if not send_private_data %}
+
+{% endif %}
+
+    <li>Руководитель организации: {{general_manager_caption}} {{general_manager.full_name}}
+{% if send_private_data %}
+    <li>Дата рождения: {{general_manager.birthdate.rus_full_text()}}
+    <li>Паспортные данные: {{general_manager.passport.passport_rf_full_text}}
+{% endif %}
+</ul>
+
+<p>С уважением,<br />
+    Вера Жукова
+<p><br/>
+<p>команда ЮРБЮРО
+<p><a href="tel:+78005005440">8 800 500-54-40</a><br/>
+<a href="mailto:support@yurburo.ru">support@yurburo.ru</a><br/>
+<a href="{{schema}}://{{ domain }}">yurburo.ru</a>
+
+</body>
+</html>

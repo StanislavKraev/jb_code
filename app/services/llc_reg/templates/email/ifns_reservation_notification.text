@@ -1,0 +1,12 @@
+Здравствуйте!
+Сообщаю, что я записался на прием в налоговую. ООО &laquo;{{full_name}}&raquo;. Документы, необходимые для регистрации:
+{% for doc in docs %}
+{{doc.caption}} - {{doc.link}}
+{% endfor %}
+ИФНС: {{ifns}}. Дата и время: {{booking_time}}
+
+email: {% if email %}{{email}}{% else %} отсутствует{% endif %}
+телефон: {% if mobile %}{{mobile}}{% else %} отсутствует{% endif %}
+{% if social_link %}Ссылка на профиль в соц. сети: {{social_link}}{% endif %}
+
+Спасибо

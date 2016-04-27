@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /api/
+Disallow: /storage/
+Host: yurburo.ru

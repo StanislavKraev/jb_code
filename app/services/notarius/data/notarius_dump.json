@@ -1,0 +1,53 @@
+[
+  {
+    "id": "542d17adb8ac2f2c33e485c6",
+    "title": "«Фабрика документов»",
+    "region": "Санкт-Петербург",
+    "schedule": {
+      "weekends": [],
+      "type": "normal",
+      "start_time": "10:00",
+      "end_time": "21:00"
+    },
+    "address": {
+      "index": 191123,
+      "street_type": "ул",
+      "region": "Санкт-Петербург",
+      "street": "Фурштатская",
+      "coord_lat": 59.94484,
+      "coord_long": 30.360044,
+      "house_type": "д",
+      "house": "29"
+    },
+    "schedule_caption": "с 10 до 20 без выходных",
+    "metro_station": "Чернышевская",
+    "how_to_get": ""
+  },
+  {
+    "id": "548ac3a5f1abd62bd0e49c78",
+    "title": "",
+    "region": "Санкт-Петербург",
+    "schedule": {
+      "weekends": [6, 7],
+      "type": "normal",
+      "start_time": "09:00",
+      "end_time": "18:00"
+    },
+    "address": {
+      "index": 191167,
+      "street_type": "ул",
+      "region": "Санкт-Петербург",
+      "street": "Александра Невского",
+      "coord_lat": 59.926476,
+      "coord_long": 30.385640,
+      "house_type": "д",
+      "house": "9"
+    },
+    "schedule_caption": "с 10 до 20 без выходных",
+    "metro_station": "Пл.Александра Невского",
+    "how_to_get": "вход с ул. Херсонская",
+    "surname": "Беляев",
+    "name": "С.",
+    "patronymic": "Н."
+  }
+]

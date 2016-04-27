@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h2>Здравствуйте!</h2>
+
+<p>Вы успешно подготовили и оплатили документы для регистрации ООО. Они доступны вам в <a href="{{self_care_url}}">личном кабинете</a> и по ссылкам ниже:
+
+<ol>
+    {% for doc in docs %}
+    <li>
+        <a href="{{doc.link}}">{{doc.caption}}</a>
+    </li>
+    {% endfor %}
+</ol>
+
+Подробную информацию о том, как подать документы на регистрацию и как получить готовые, вы найдете в ЮРБЮРО по <a href="{{go_further_url}}">ссылке</a>.
+
+<p>&nbsp;
+
+<p>Спасибо,<br />
+    команда ЮРБЮРО
+<p><a href="tel:+78005005440">8 800 500-54-40</a><br/>
+<a href="mailto:support@yurburo.ru">support@yurburo.ru</a><br/>
+<a href="{{schema}}://{{ domain }}/{{'?'|utm_args('paid_batch_docs', user_id)}}">yurburo.ru</a>
+
+</body>
+</html>

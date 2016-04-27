@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <p>Здравствуйте!
+    <p>Сообщаю, что я записался на прием в налоговую. ООО &laquo;{{full_name}}&raquo;. Документы, необходимые для регистрации:
+    <ul>
+        {% for doc in docs %}
+        <li>
+            <a href="{{doc.url}}">{{doc.title}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <p>&nbsp;
+    <p>ИФНС: {{ifns}}. Дата и время: {{booking_time}}
+    <p>&nbsp;
+    <p>&nbsp;
+    <p>email: {% if email %}<a href="mailto:{{email}}">{{email}}</a>{% else %} отсутствует{% endif %}
+    <p>телефон: {% if mobile %}{{mobile}}{% else %} отсутствует{% endif %}
+    {% if social_link %}<p>Ссылка на профиль в соц. сети:<a href="{{social_link}}">social_link</a>{% endif %}
+    <p>Спасибо,<br />
+        команда ЮРБЮРО!<br/>
+</body>
+</html>

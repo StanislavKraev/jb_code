@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <p>Здравствуйте!
+    <p>В процессе регистрации ООО &laquo;{{full_name}}&raquo; я записался к нотариусу через сервис ЮРБЮРО.
+
+    <p>&nbsp;
+    <p>Нотариус: {{notarius}}. Дата и время: {{booking_time}}
+    <p>&nbsp;
+    <p>Список приложенных файлов:
+    <ol>
+        {% for file in attaches %}
+        <li>
+            <a href="{{file.url}}">{{file.title}}</a>
+        </li>
+        {% endfor %}
+    </ol>
+    <p>&nbsp;
+    <p>&nbsp;
+    <p>email: {% if email %}<a href="mailto:{{email}}">{{email}}</a>{% else %} отсутствует{% endif %}
+    <p>телефон: {% if mobile %}{{mobile}}{% else %} отсутствует{% endif %}
+    {% if social_link %}<p>Ссылка на профиль в соц. сети:<a href="{{social_link}}">social_link</a>{% endif %}
+    <p>Спасибо,<br />
+        команда ЮРБЮРО!<br/>
+</body>
+</html>

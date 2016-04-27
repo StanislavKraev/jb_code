@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<h2>Здравствуйте!</h2>
+
+<p>Для подтверждения адреса электронной почты пройдите, пожалуйста, по <a href="{{email_confirm_link|utm_args('confirm_email', uid)|make_auth_url(uid)}}">данной ссылке</a>.
+
+<p>Возможно, вы не указывали свою почту в нашем сервисе, и кто-то другой использовал ваш адрес электронной почты. Если это так, то просто проигнорируйте это письмо.
+<p>&nbsp;
+
+<p>Спасибо,<br />
+    команда ЮРБЮРО
+<p><a href="tel:+78005005440">8 800 500-54-40</a><br/>
+<a href="mailto:support@yurburo.ru">support@yurburo.ru</a><br/>
+<a href="{{schema}}://{{ domain }}/{{'?'|utm_args('confirm_email', uid)}}">yurburo.ru</a>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% from "formerrors.html" import render_field_errors %}
+{% block content %}
+<div class="container">
+    {% if login_failed %}
+    <div class="alert alert-danger">Невозможно войти в систему</div>
+    {% endif %}
+    <form method="POST" action="/login/">
+        <div class="form-group">
+            <label>Логин</label>
+            <input type="text" class="form-control" name="username" autocomplete="off">
+            {{ render_field_errors(form.username) }}
+        </div>
+        <div class="form-group">
+            <label>Пароль</label>
+            <input type="password" class="form-control" name="password" autocomplete="off">
+            {{ render_field_errors(form.password) }}
+        </div>
+        <button type="submit" class="btn btn-success pull-right">
+            Войти
+        </button>
+    </form>
+</div>
+{% endblock %}
